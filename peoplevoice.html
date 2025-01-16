@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People's Voice</title>
+    <link rel="stylesheet" href="dashboard_style3.css">
+</head>
+<body>
+    <header>
+        <div class="left-header">
+            <button id="toggle-sidebar">☰</button>
+            <div class="logo">
+                <img src="/logo.jpg" alt="Logo" width="40">
+            </div>
+        </div>
+        <nav class="top-nav">
+            <a href="home_pg.html" onclick="fetchNews('home')">Home</a>
+            <a href="trivia_pg.html" onclick="fetchNews('trivia')">Trivia</a>
+            <a href="people_voice_pg.html" class="active">People's Voice</a>
+            <a href="submissions_pg.html" onclick="fetchNews('submissions')">Submissions</a>
+            <a href="bookmarks_pg.html" onclick="fetchNews('bookmarks')">Bookmarks</a>
+            <a href="editorial_guidelines_pg.html" onclick="fetchNews('editorial_guidelines')">Editorial Guidelines</a>
+            <a href="about_us_pg.html" onclick="fetchNews('about_us')">About Us</a>
+            <a href="privacy_security_pg.html" onclick="fetchNews('privacy_security')">Privacy & Security</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search" onkeypress="searchNews(event)">
+        </div>
+        <div class="user-profile">
+            <div class="bell-icon">
+                <img src="/bell-regular-24.png" alt="Notification" width="25">
+            </div>
+            <div class="settings-icon">
+                <img src="/cog-solid-24.png" alt="Settings" width="25">
+            </div>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="home_pg.html">Home</a></li>
+            <li><a href="trivia_pg.html">Trivia</a></li>
+            <li><a href="people_voice_pg.html" class="active">People's Voice</a></li>
+            <li><a href="submissions_pg.html">Submissions</a></li>
+            <li><a href="bookmarks_pg.html">Bookmarks</a></li>
+            <li><a href="editorial_guidelines_pg.html">Editorial Guidelines</a></li>
+            <li><a href="about_us_pg.html">About Us</a></li>
+            <li><a href="privacy_security_pg.html">Privacy & Security</a></li>
+        </ul>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main>
+        <h1>People's Voice</h1>
+        <p>Welcome to the People's Voice page! Share your opinions and explore what others are saying about various topics.</p>
+        <section id="content-container">
+            <!-- Content dynamically loaded or written here -->
+            <div class="article">
+                <h3>Express Your Opinion</h3>
+                <p>Submit your views and let your voice be heard in the community.</p>
+                <button class="cta-button">Submit Your Voice</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Toggle Sidebar
+        const toggleSidebar = document.getElementById('toggle-sidebar');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        toggleSidebar.addEventListener('click', () => {
+            sidebar.style.left = sidebar.style.left === '0px' ? '-220px' : '0px';
+            overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.style.left = '-220px';
+            overlay.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

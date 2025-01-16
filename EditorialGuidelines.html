@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editorial Guidelines</title>
+    <link rel="stylesheet" href="dashboard_style5.css">
+</head>
+<body>
+    <header>
+        <div class="left-header">
+            <button id="toggle-sidebar">☰</button>
+            <div class="logo">
+                <img src="/logo.jpg" alt="Logo" width="40">
+            </div>
+        </div>
+        <nav class="top-nav">
+            <a href="home.html">Home</a>
+            <a href="trivia_pg.html">Trivia</a>
+            <a href="people_voice_pg.html">People's Voice</a>
+            <a href="submissions_pg.html">Submissions</a>
+            <a href="bookmarks_pg.html">Bookmarks</a>
+            <a href="#" class="active">Editorial Guidelines</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search Guidelines">
+        </div>
+        <div class="user-profile">
+            <div class="bell-icon">
+                <img src="/bell-regular-24.png" alt="Notification" width="25">
+            </div>
+            <div class="settings-icon">
+                <img src="/cog-solid-24.png" alt="Settings" width="25">
+            </div>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="trivia_pg.html">Trivia</a></li>
+            <li><a href="people_voice_pg.html">People's Voice</a></li>
+            <li><a href="submissions_pg.html">Submissions</a></li>
+            <li><a href="bookmarks_pg.html">Bookmarks</a></li>
+            <li><a href="#" class="active">Editorial Guidelines</a></li>
+            <li><a href="about_us_pg.html">About Us</a></li>
+            <li><a href="privacy_security_pg.html">Privacy & Security</a></li>
+        </ul>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main>
+        <section id="editorial-guidelines">
+            <h1>Editorial Guidelines</h1>
+            <article>
+                <h2>Submission Rules</h2>
+                <p>All submissions must meet our quality standards, be free of plagiarism, and adhere to ethical guidelines. Ensure the content is relevant and adds value to our audience.</p>
+            </article>
+
+            <article>
+                <h2>Formatting Standards</h2>
+                <p>Submissions should follow our formatting guidelines, including font size, headers, and image usage. Use clear and concise language throughout.</p>
+            </article>
+
+            <article>
+                <h2>Editorial Review Process</h2>
+                <p>All articles go through a rigorous review process. Our editorial team reserves the right to suggest edits or reject content that does not meet our standards.</p>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        // Sidebar toggle functionality
+        const toggleSidebar = document.getElementById('toggle-sidebar');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        toggleSidebar.addEventListener('click', () => {
+            sidebar.style.left = sidebar.style.left === '0px' ? '-220px' : '0px';
+            overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.style.left = '-220px';
+            overlay.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

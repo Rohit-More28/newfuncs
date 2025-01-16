@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="dashboard_style6.css">
+</head>
+<body>
+    <header>
+        <div class="left-header">
+            <button id="toggle-sidebar">☰</button>
+            <div class="logo">
+                <img src="/logo.jpg" alt="Logo" width="40">
+            </div>
+        </div>
+        <nav class="top-nav">
+            <a href="#" onclick="fetchNews('politics')">Politics</a>
+            <a href="#" onclick="fetchNews('business')">Business</a>
+            <a href="#" onclick="fetchNews('sports')">Sports</a>
+            <a href="#" onclick="fetchNews('entertainment')">Entertainment</a>
+            <a href="#" onclick="fetchNews('health')">Health</a>
+            <a href="#" onclick="fetchNews('technology')">Technology</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search" onkeypress="searchNews(event)">
+        </div>
+        <div class="user-profile">
+            <div class="bell-icon">
+                <img src="/bell-regular-24.png" alt="Notification" width="25">
+            </div>
+            <div class="settings-icon">
+                <img src="/cog-solid-24.png" alt="Settings" width="25">
+            </div>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="trivia.html">Trivia</a></li>
+            <li><a href="peoplesvoice.html">People's Voice</a></li>
+            <li><a href="submissions.html">Submissions</a></li>
+            <li><a href="bookmarks.html">Bookmarks</a></li>
+            <li><a href="editorialguidelines.html">Editorial Guidelines</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="privacysecurity.html">Privacy & Security</a></li>
+        </ul>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main>
+        <section id="about-container">
+            <h1>About Us</h1>
+            <p>Welcome to our site! Here at NewsYork, we strive to bring you the latest and most accurate news, delivered with a commitment to journalistic integrity and excellence. Our dedicated team works tirelessly to keep you informed about the topics that matter most.</p>
+
+            <h2>Our Mission</h2>
+            <p>Our mission is to provide our readers with insightful, thought-provoking, and balanced news coverage. We aim to foster an informed and engaged community.</p>
+
+            <h2>Our Vision</h2>
+            <p>To be the most trusted and innovative news platform, delivering exceptional content that inspires and empowers our readers.</p>
+
+            <h2>Contact Us</h2>
+            <p>If you have any questions, suggestions, or feedback, please don't hesitate to reach out. You can contact us at <a href="mailto:contact@newsyork.com">contact@newsyork.com</a>.</p>
+        </section>
+    </main>
+
+    <script>
+        // Toggle Sidebar
+        const toggleSidebar = document.getElementById('toggle-sidebar');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        toggleSidebar.addEventListener('click', () => {
+            sidebar.style.left = sidebar.style.left === '0px' ? '-220px' : '0px';
+            overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.style.left = '-220px';
+            overlay.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

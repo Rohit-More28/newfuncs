@@ -1,0 +1,196 @@
+/* General page layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 15px;
+    color: white;
+    position: relative;
+    z-index: 10;
+}
+
+.left-header {
+    display: flex;
+    align-items: center;
+}
+
+#toggle-sidebar {
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.logo img {
+    margin-left: 10px;
+}
+
+.top-nav {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.top-nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.top-nav a.active {
+    border-bottom: 2px solid #ff4500;
+}
+
+.top-nav a:hover {
+    text-decoration: underline;
+}
+
+.search-bar input {
+    padding: 5px;
+    width: 200px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.bell-icon, .settings-icon {
+    width: 25px;
+    height: 25px;
+    margin: 0 10px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 220px;
+    background-color: #f4f4f4;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -220px;
+    transition: left 0.3s ease;
+    padding-top: 20px;
+    z-index: 5;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    text-align: left;
+}
+
+.sidebar ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+}
+
+.sidebar ul li a.active {
+    background-color: #ddd;
+    font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+    background-color: #ddd;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 4;
+}
+
+/* Bookmarks Page Content */
+main {
+    padding: 20px;
+    margin-left: 220px; /* Ensures main content aligns with sidebar */
+}
+
+main h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#content-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.article {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.article h3 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.article p {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+.article button {
+    padding: 10px;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.article button:hover {
+    background-color: #cc3700;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    main {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .sidebar {
+        width: 100%;
+        left: -100%;
+    }
+
+    .sidebar ul li {
+        text-align: center;
+    }
+}

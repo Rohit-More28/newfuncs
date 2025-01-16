@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submissions</title>
+  <link rel="stylesheet" href="dashboard_style.css">
+</head>
+<body>
+  <header>
+    <div class="left-header">
+      <button id="toggle-sidebar">☰</button>
+      <div class="logo">
+        <img src="/logo.jpg" alt="Logo" width="40">
+      </div>
+    </div>
+    <nav class="top-nav">
+      <a href="#" onclick="fetchNews('politics')">Politics</a>
+      <a href="#" onclick="fetchNews('business')">Business</a>
+      <a href="#" onclick="fetchNews('sports')">Sports</a>
+      <a href="#" onclick="fetchNews('entertainment')">Entertainment</a>
+      <a href="#" onclick="fetchNews('health')">Health</a>
+      <a href="#" onclick="fetchNews('technology')">Technology</a>
+    </nav>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search" onkeypress="searchNews(event)">
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="trivia.html">Trivia</a></li>
+      <li><a href="peoples_voice.html">People's Voice</a></li>
+      <li class="active"><a href="submissions.html">Submissions</a></li>
+      <li><a href="bookmarks.html">Bookmarks</a></li>
+      <li><a href="editorial_guidelines.html">Editorial Guidelines</a></li>
+      <li><a href="about_us.html">About Us</a></li>
+      <li><a href="privacy_security.html">Privacy & Security</a></li>
+    </ul>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <main>
+    <section id="submissions-container">
+      <h1>Submissions</h1>
+      <p>Welcome to the Submissions page! Here you can share your thoughts and ideas.</p>
+      <form id="submission-form">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" placeholder="Enter your title" required>
+        <label for="content">Content:</label>
+        <textarea id="content" name="content" placeholder="Enter your content" required></textarea>
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    // Toggle Sidebar
+    const toggleSidebar = document.getElementById('toggle-sidebar');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    toggleSidebar.addEventListener('click', () => {
+      sidebar.style.left = sidebar.style.left === '0px' ? '-220px' : '0px';
+      overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
+    });
+
+    overlay.addEventListener('click', () => {
+      sidebar.style.left = '-220px';
+      overlay.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

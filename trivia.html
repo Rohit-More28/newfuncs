@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia</title>
+    <link rel="stylesheet" href="dashboard_style2.css">
+</head>
+<body>
+    <header>
+        <div class="left-header">
+            <button id="toggle-sidebar">&#9776;</button>
+            <div class="logo">
+                <img src="/logo.jpg" alt="Logo" width="40">
+            </div>
+        </div>
+        <nav class="top-nav">
+            <a href="home.html">Home</a>
+            <a href="trivia.html" class="active">Trivia</a>
+            <a href="peoples_voice.html">People's Voice</a>
+            <a href="submissions.html">Submissions</a>
+            <a href="bookmarks.html">Bookmarks</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search Trivia">
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="trivia.html" class="active">Trivia</a></li>
+            <li><a href="peoples_voice.html">People's Voice</a></li>
+            <li><a href="submissions.html">Submissions</a></li>
+            <li><a href="bookmarks.html">Bookmarks</a></li>
+            <li><a href="editorial_guidelines.html">Editorial Guidelines</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="privacy_security.html">Privacy & Security</a></li>
+        </ul>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main id="trivia-page">
+        <h1>Trivia</h1>
+        <div class="quiz-card">
+            <h2>Quiz 1: General Knowledge</h2>
+            <p>Test your general knowledge with this fun quiz!</p>
+            <a href="#">Take Quiz</a>
+        </div>
+
+        <div class="quiz-card">
+            <h2>Quiz 2: Science & Nature</h2>
+            <p>Explore the wonders of science and nature.</p>
+            <a href="#">Take Quiz</a>
+        </div>
+
+        <div class="quiz-card">
+            <h2>Quiz 3: History & Geography</h2>
+            <p>Challenge your knowledge of history and geography.</p>
+            <a href="#">Take Quiz</a>
+        </div>
+    </main>
+
+    <script>
+        const toggleSidebar = document.getElementById('toggle-sidebar');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        toggleSidebar.addEventListener('click', () => {
+            sidebar.style.left = sidebar.style.left === '0px' ? '-220px' : '0px';
+            overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.style.left = '-220px';
+            overlay.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
